@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Add Article</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Knowledge Base</h1>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="add_article.html">Add Article</a></li>
+        </ul>
+      </header>
+      <hr>
+      <h2>Add Article</h2>
+      <form action="add_article.html" method="post">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" name="author"><br><br>
+        <label for="author">Body:</label><br>
+        <textarea name="body" id="body" cols="50" rows="7" placeholder="Enter your post here..."></textarea>
+        <br><br>
+        <input type="submit" value="Add Article">
+      </form>
+    </div>
+</body>
+</html>
