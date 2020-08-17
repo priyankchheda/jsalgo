@@ -2,6 +2,6 @@
 <h2><%= article.title %></h2>
 <h5>By <%= article.author %></h5>
 <p><%= article.body %></p>
-<a href="<%= article._id %>/edit/"><button>Edit</button></a>
-<a href="<%= article._id %>/delete/"><button>Delete</button></a><br>
+<a href="/article/<%= article._id %>/edit"><button>Edit</button></a>
+<a href="/article/<%= article._id %>/delete"><button>Delete</button></a><br>
 <%- include('./partials/foot') %>

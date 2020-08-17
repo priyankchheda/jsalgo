@@ -1,0 +1,13 @@
+<%- include('./partials/head') %>
+<h2>Edit Article</h2>
+<form action="/article/<%= article._id %>/edit" method="post">
+  <label for="title">Title:</label><br>
+  <input type="text" id="title" name="title" value="<%= article.title %>"><br><br>
+  <label for="author">Author:</label><br>
+  <input type="text" id="author" name="author" value="<%= article.author %>"><br><br>
+  <label for="author">Body:</label><br>
+  <textarea name="body" id="body" cols="50" rows="7" placeholder="Enter your post here..."><%= article.body %></textarea>
+  <br><br>
+  <input type="submit" value="Edit Article">
+</form>
+<%- include('./partials/foot') %>

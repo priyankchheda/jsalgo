@@ -26,7 +26,22 @@ router.get('/:id', (request, response) => {
 });
 
 router.get("/:id/edit", function(request, response) {
-  response.send(`edit article ${request.params.id}`);
+  Article.findById(request.params.id, function(err, article) {
+    response.render('edit_article', { article });
+  });
+});
+
+router.post("/:id/edit", function(request, response) {
+  const article = {
+    title: request.body.title,
+    author: request.body.author,
+    body: request.body.body
+  };
+
+  Article.findByIdAndUpdate(request.params.id, article, function(err) {
+    if (err) return console.error(err);
+    response.redirect('/');
+  });
 });
 
 router.get("/:id/delete", function(request, response) {
