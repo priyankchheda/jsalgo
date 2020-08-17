@@ -20,7 +20,9 @@ router.post('/add', function(request, response) {
 });
 
 router.get('/:id', (request, response) => {
-  response.send(`show article ${request.params.id}`);
+  Article.findById(request.params.id, function(err, article) {
+    response.render('view_article', { article });
+  });
 });
 
 router.get("/:id/edit", function(request, response) {
