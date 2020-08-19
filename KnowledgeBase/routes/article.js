@@ -44,8 +44,11 @@ router.post("/:id/edit", function(request, response) {
   });
 });
 
-router.get("/:id/delete", function(request, response) {
-  response.send(`delete article ${request.params.id}`);
+router.delete("/:id/delete", function(request, response) {
+  Article.findByIdAndDelete(request.params.id, function(err) {
+    if (err) { console.log(err); }
+    response.send('article successfully deleted');
+  });
 });
 
 module.exports = router;

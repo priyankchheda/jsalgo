@@ -3,5 +3,6 @@
 <h5>By <%= article.author %></h5>
 <p><%= article.body %></p>
 <a href="/article/<%= article._id %>/edit"><button>Edit</button></a>
-<a href="/article/<%= article._id %>/delete"><button>Delete</button></a><br>
+<button id='delete-article' data-id='<%= article._id %>'>Delete</button><br>
+<script src="/js/main.js"></script>
 <%- include('./partials/foot') %>
