@@ -15,12 +15,7 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
-app.get('/', async function (request, response) {
-  const articles = await Article.find().sort({ createdAt: 'desc' });
-  response.render('articles/index', { articles });
-})
-
-app.use('/articles', articleRouter);
+app.use('/', articleRouter);
 
 app.listen(5000, function () {
   console.log('listening on port 3000');
